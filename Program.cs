@@ -55,5 +55,5 @@ var f7 = lista.GroupBy(v => v.Vedettseg);
 Console.WriteLine("7. Feladat: Statisztika");
 foreach (var grp in f7)
 {
-    Console.WriteLine($"\t{grp.Key}:----> {grp.Count()} fő");
+    Console.WriteLine($"\t{grp.Key}:----> {grp.Count()} db");
 }
