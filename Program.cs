@@ -51,25 +51,9 @@ else
 {
     Console.WriteLine($"\tNincs ilyen védettségi szinttel barlang az adatok között!");
 }
-Console.WriteLine("7. feladat: Statisztika");
-int fv = 0;
-int mv = 0;
-int v = 0;
-for (int i = 0;i < lista.Count; i++)
+var f7 = lista.GroupBy(v => v.Vedettseg);
+Console.WriteLine("7. Feladat: Statisztika");
+foreach (var grp in f7)
 {
-    if (lista[i].Vedettseg == "fokozottan védett")
-    {
-        fv++;
-    }
-    else if (lista[i].Vedettseg == "megkülönböztetetten védett")
-    {
-        mv++;
-    }
-    else if (lista[i].Vedettseg == "védett")
-    {
-        v++;
-    }
+    Console.WriteLine($"\t{grp.Key}:----> {grp.Count()} fő");
 }
-Console.WriteLine($"\tfokozottan védett:------------> {fv} db");
-Console.WriteLine($"\tmegkülönböztetetten védett:---> {mv} db");
-Console.WriteLine($"\tvédett:-----------------------> {v} db");
